@@ -1,5 +1,5 @@
 module.exports = {
-  base: 'https://vincentsjm.github.io/react-redux-working-backwards/',
+  base: '/react-redux-working-backwards/',
   title: 'React Redux Working Backwards',
   themeConfig: {
     sidebar: [

@@ -1,8 +1,8 @@
 # Actions
 
-Actions are payloads of information that send data from your application to your
-store. They are the _only_ source of information for the store. You send them to
-the store using `store.dispatch()`.
+In Redux, Actions are objects, which are payloads of information that send data
+from your application to your store. They are the _only_ source of information
+for the store. You send them to the store using `store.dispatch()`.
 
 - type:
 
@@ -29,7 +29,7 @@ export interface FluxStandardAction<
 }
 ```
 
-A basic Flux Standard Action:
+A basic Flux Standard Action object:
 
 ```js
 const action = {
@@ -52,4 +52,49 @@ const action = {
 
 ## Action Creators
 
-## @reduxjs/toolkit `createAction`
+Action creators are functions that create actions.
+
+```js
+// action type
+const INCREMENT = 'counter/increment';
+// action creator function
+function increment(amount) {
+  return {
+    type: INCREMENT,
+    payload: amount,
+  };
+}
+// action object
+const action = increment(3);
+// { type: 'counter/increment', payload: 3 }
+```
+
+## @reduxjs/toolkit `createAction()`
+
+A helper function for defining a Redux action type and creator
+
+- type:
+
+```ts
+function createAction(type: string, prepareAction?: Function): Function;
+```
+
+- example:
+
+```js
+// createAction return an action creator function
+const increment = createAction('counter/increment');
+
+// invoke the action creator function to get the action object
+let action = increment();
+// { type: 'counter/increment' }
+
+action = increment(3);
+// returns { type: 'counter/increment', payload: 3 }
+
+console.log(increment.toString());
+// 'counter/increment'
+
+console.log(`The action type is: ${increment}`);
+// 'The action type is: counter/increment'
+```

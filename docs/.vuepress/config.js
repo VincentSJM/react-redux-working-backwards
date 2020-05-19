@@ -2,6 +2,11 @@ module.exports = {
   base: '/react-redux-working-backwards/',
   title: 'React Redux Working Backwards',
   themeConfig: {
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Libraries', link: '/libraries'},
+    ],
     sidebar: [
       '/installation',
       '/',
@@ -11,10 +16,10 @@ module.exports = {
         collapsable: false,
         children: [
           '/guide/store',
-          '/guide/reducers',
+          '/guide/reducer',
           '/guide/state',
           '/guide/actions',          
-          '/guide/middlewares',
+          '/guide/middleware',
           '/guide/slices',
         ]
       }

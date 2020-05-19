@@ -1,11 +1,17 @@
-# Slices
+# Splitting Up Reducer Logic
 
-## Splitting Reducers
+- [official doc](https://redux.js.org/recipes/structuring-reducers/splitting-reducer-logic)
 
-## `combineReducers`
+Due to using a single state tree, all state of our application is contained
+inside one big object. However, as our application grows in scale, the store can
+get really bloated.
 
-## `createSlice`
+## slice reducer
 
-## cross slice
+### `createSlice` from @reduxjs/toolkit
+
+### cross slice
 
 - [official doc](https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers#sharing-data-between-slice-reducers)
+
+## `combineReducers` from redux

@@ -1,4 +1,4 @@
-# Middlewares
+# Middleware
 
 - type `({ getState, dispatch }) => next => action => any`
 
@@ -35,6 +35,25 @@ const crashReporter = (store) => (next) => (action) => {
 
 ## Thunk
 
+Without middleware, Redux store only supports synchronous data flow. This is
+what you get by default with createStore(). Asynchronous middleware like
+[redux-thunk](https://github.com/reduxjs/redux-thunk/blob/master/src/index.js)
+wraps the store's dispatch() method and allows you to dispatch something other
+than action object, for example, functions.
+
+A [thunk](https://en.wikipedia.org/wiki/Thunk) is a function that wraps an
+expression to delay its evaluation.
+
+```js
+// calculation of 1 + 2 is immediate
+const x = 1 + 2;
+
+// calculation of 1 + 2 is delayed
+// foo can be called later to perform the calculation
+// foo is a thunk!
+const foo = () => 1 + 2;
+```
+
 [redux-thunk](https://github.com/reduxjs/redux-thunk/blob/master/src/index.js)
 is a 14 line code library and the meat of the code is as following:
 
@@ -53,13 +72,21 @@ Let's define an action creator that returns a async function.
 ```js
 const asyncActionCreator = () => {
   return async (dispatch, getState) => {
-    const { counter } = getState();
-    const resp = await fetch(`/api/${counter}`);
-    const data = await resp.json();
-    dispatch({
-      type: 'SOME_TYPE',
-      payload: data,
-    });
+    try {
+      const { counter } = getState();
+      const resp = await fetch(`/api/${counter}`);
+      const data = await resp.json();
+      dispatch({
+        type: 'SOME_TYPE',
+        payload: data,
+      });
+    } catch (err) {
+      dispatch({
+        type: 'SOME_TYPE',
+        payload: err,
+        error: true,
+      });
+    }
   };
 };
 ```

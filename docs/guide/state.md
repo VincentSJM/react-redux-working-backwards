@@ -34,6 +34,8 @@ state and reducer.
 
 ## Normalizing State
 
+- [official doc](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape)
+
 Usually a REST API can return following data:
 
 ```js
@@ -112,3 +114,5 @@ help normalize and denormalize data.
 - [official doc](https://react-redux.js.org/api/hooks#useselector)
 
 ### Reselect library
+
+- [official doc](https://github.com/reduxjs/reselect/blob/master/README.md)

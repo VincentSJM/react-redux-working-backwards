@@ -41,8 +41,8 @@ what you get by default with createStore(). Asynchronous middleware like
 wraps the store's dispatch() method and allows you to dispatch something other
 than action object, for example, functions.
 
-A [thunk](https://en.wikipedia.org/wiki/Thunk) is a function that wraps an
-expression to delay its evaluation.
+- A [thunk](https://en.wikipedia.org/wiki/Thunk) is a function that wraps an
+  expression to delay its evaluation.
 
 ```js
 // calculation of 1 + 2 is immediate
@@ -54,23 +54,11 @@ const x = 1 + 2;
 const foo = () => 1 + 2;
 ```
 
-[redux-thunk](https://github.com/reduxjs/redux-thunk/blob/master/src/index.js)
-is a 14 line code library and the meat of the code is as following:
+- A `thunk action` or `thunk` is no longer a plain action object, but a function
+- A `thunk action creator` is a high order function that returns a `thunk`
 
 ```js
-const thunkMiddleware = ({ dispatch, getState }) => (next) => (action) => {
-  if (typeof action === 'function') {
-    return action(dispatch, getState);
-  }
-
-  return next(action);
-};
-```
-
-Let's define an action creator that returns a async function.
-
-```js
-const asyncActionCreator = () => {
+const thunkActionCreator = () => {
   return async (dispatch, getState) => {
     try {
       const { counter } = getState();
@@ -88,6 +76,21 @@ const asyncActionCreator = () => {
       });
     }
   };
+};
+```
+
+### Dive deep into `redux-thunk`
+
+[redux-thunk](https://github.com/reduxjs/redux-thunk/blob/master/src/index.js)
+is a 14 line code library and the meat of the code is as following:
+
+```js
+const thunkMiddleware = ({ dispatch, getState }) => (next) => (action) => {
+  if (typeof action === 'function') {
+    return action(dispatch, getState);
+  }
+
+  return next(action);
 };
 ```
 

@@ -8,6 +8,7 @@ returns the next state.
 
 It's called a reducer because it's the type of function you would pass to
 [`Array.prototype.reduce(reducer, ?initialValue)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
+
 It's very important that the reducer stays pure. Things you should **never** do
 inside a reducer:
 

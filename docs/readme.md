@@ -26,7 +26,7 @@ It is a self-contained app with the following parts:
 This is a simple representation of the concept of "one-way data flow":
 
 <p style="text-align: center; margin: 2em">
-  <img style="width:100%;max-width:450px;" :src="$withBase('/flow.png')">
+  <img style="width:100%;max-width:640px;" :src="$withBase('/flow.png')">
 </p>
 
 However, the simplicity quickly breaks down when we have **multiple components

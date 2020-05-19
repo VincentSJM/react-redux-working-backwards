@@ -2,6 +2,7 @@ module.exports = {
   base: '/react-redux-working-backwards/',
   title: 'React Redux Working Backwards',
   themeConfig: {
+    sidebarDepth: 2,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },

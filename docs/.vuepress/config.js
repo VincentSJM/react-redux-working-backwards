@@ -21,7 +21,6 @@ module.exports = {
           '/guide/state',
           '/guide/actions',          
           '/guide/middleware',
-          '/guide/slices',
         ]
       }
     ]

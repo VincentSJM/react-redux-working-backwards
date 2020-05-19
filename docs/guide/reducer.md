@@ -3,11 +3,8 @@
 - [official doc](https://redux.js.org/glossary#reducer)
 - type `(state: S, action: A) => S`
 
-The reducer is a pure function that takes the previous state and an action, and
+A reducer is a pure function that takes the previous state and an action, and
 returns the next state.
-
-It's called a reducer because it's the type of function you would pass to
-[`Array.prototype.reduce(reducer, ?initialValue)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
 
 It's very important that the reducer stays pure. Things you should **never** do
 inside a reducer:
@@ -16,7 +13,24 @@ inside a reducer:
 - Perform side effects like API calls and routing transitions;
 - Call non-pure functions, e.g. Date.now() or Math.random().
 
-## `switch` statement reducer
+## Reducer Glossary
+
+- **_reducer_**: any function with the signature `(state, action) => newState`
+- **_root reducer_**: the reducer function that is actually passed as the first
+  argument to `createStore`.
+- **_slice reducer_**: a reducer that is being used to handle updates to one
+  specific slice of the state tree, usually done by passing it to
+  `combineReducers`
+- **_higher-order reducer_**: a function that takes a reducer function as an
+  argument, and/or returns a new reducer function as a result (such as
+  `combineReducers`)
+
+## Create Reducer
+
+### Simple `switch` statement reducer
+
+You can use `if` statement if you want, but `switch` statement reducer is more
+common in redux
 
 ```js
 function counterReducer(state = 0, action) {
@@ -31,9 +45,9 @@ function counterReducer(state = 0, action) {
 }
 ```
 
-## `createReducer` from @reduxjs/toolkit
+### `createReducer` from @reduxjs/toolkit
 
-### "Builder callback" API
+- "Builder callback" API
 
 ```js
 import {createReducer, createAction} from '@reduxjs/toolkit`;
@@ -51,7 +65,7 @@ createReducer(0, builder =>
 
 ```
 
-### Object API
+- Object API
 
 ```js
 import {createReducer, createAction} from '@reduxjs/toolkit`;
@@ -65,11 +79,21 @@ const counterReducer = createReducer(0, {
 })
 ```
 
-### Immer
-
 You should **never** mutate the state object inside the plain reducer such as
 the `switch` statement reducer.
 
 However, @reduxjs/toolkit's `createReducer` is using
 [Immer](https://immerjs.github.io/immer/docs/introduction) and the `state` param
 is actually an Immer draft state and you can mutate it.
+
+## Slice reducer
+
+### `createSlice` from @reduxjs/toolkit
+
+## High-Order Reducer
+
+### `combineReducers` from redux
+
+### Beyond `combineReducers`
+
+- [official doc](https://redux.js.org/recipes/structuring-reducers/beyond-combinereducers)

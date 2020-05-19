@@ -70,6 +70,9 @@ const foo = () => 1 + 2;
 ```
 
 - A `thunk action` or `thunk` is no longer a plain action object, but a function
+
+### Thunk Action Creator
+
 - A `thunk action creator` is a high order function that returns a `thunk`
 
 ```js

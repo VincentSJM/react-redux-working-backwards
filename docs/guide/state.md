@@ -103,4 +103,12 @@ help normalize and denormalize data.
 
 ## Getting Redux State into React Components
 
-## The `mapStateToProps` helper
+### `connect` and `mapStateToProps` from react-redux
+
+- [official doc](https://react-redux.js.org/api/connect)
+
+### `useSelector` hook from react-redux
+
+- [official doc](https://react-redux.js.org/api/hooks#useselector)
+
+### Reselect library

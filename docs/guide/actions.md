@@ -52,7 +52,7 @@ const action = {
 
 ## Action Creators
 
-Action creators are functions that create actions.
+Action creators are functions that create action objects.
 
 ```js
 // action type
@@ -69,7 +69,9 @@ const action = increment(3);
 // { type: 'counter/increment', payload: 3 }
 ```
 
-## @reduxjs/toolkit `createAction()`
+## `createAction` from @reduxjs/toolkit
+
+- [official doc](https://redux-toolkit.js.org/api/createAction)
 
 A helper function for defining a Redux action type and creator
 

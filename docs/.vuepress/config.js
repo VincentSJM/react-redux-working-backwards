@@ -10,13 +10,12 @@ module.exports = {
         title: 'Core Concepts',
         collapsable: false,
         children: [
+          '/guide/store',
           '/guide/reducers',
           '/guide/state',
-          '/guide/actions',
-          '/guide/selectors',
+          '/guide/actions',          
+          '/guide/middlewares',
           '/guide/slices',
-          '/guide/thunks',
-          '/guide/middlewares'
         ]
       }
     ]

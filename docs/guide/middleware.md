@@ -2,6 +2,10 @@
 
 - type `({ getState, dispatch }) => next => action => any`
 
+<p style="text-align: center; margin: 2em">
+  <img style="width:100%;max-width:450px;" :src="$withBase('/reduxMiddleware.png')">
+</p>
+
 ## Logger
 
 ```js

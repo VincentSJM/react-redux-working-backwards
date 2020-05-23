@@ -8,6 +8,10 @@
   application to your store. They are the _only_ source of information for the
   store. You send them to the store using `store.dispatch()`.
 
+```js
+store.dispatch({ type: 'INCREMENT' });
+```
+
 ## Flux Standard Action (FSA)
 
 - [official doc](https://github.com/redux-utilities/flux-standard-action#introduction)
@@ -80,3 +84,7 @@ console.log(increment.toString());
 console.log(`The action type is: ${increment}`);
 // 'The action type is: counter/increment'
 ```
+
+## Dispatch Action From React Components
+
+### `connect` and `mapDispatchToProps` from react-redux

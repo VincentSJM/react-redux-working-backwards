@@ -10,8 +10,6 @@ const reducer = (state = initialState, action) {...};
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
 ```
 
-
-
 ## Normalizing State
 
 - [official doc](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape)
@@ -75,7 +73,7 @@ const state = {
     },
     // JavaScript object is not an ordered map
     // we need to add back order info
-    idOrder: ['001', '002', '003', ...],    
+    idOrder: ['001', '002', '003', ...],
   },
 }
 

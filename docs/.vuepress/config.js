@@ -17,10 +17,11 @@ module.exports = {
         collapsable: false,
         children: [
           '/guide/store',
-          '/guide/reducer',
+          '/guide/reducer-part-one',
           '/guide/state',
           '/guide/actions',          
           '/guide/middleware',
+          '/guide/reducer-part-two',
         ]
       }
     ]

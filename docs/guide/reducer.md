@@ -47,7 +47,9 @@ function counterReducer(state = 0, action) {
 
 ### `createReducer` from @reduxjs/toolkit
 
-- "Builder callback" API
+- [official doc](https://redux-toolkit.js.org/api/createReducer)
+
+#### "Builder callback" API
 
 ```js
 import {createReducer, createAction} from '@reduxjs/toolkit`;
@@ -65,7 +67,7 @@ createReducer(0, builder =>
 
 ```
 
-- Object API
+#### Object API
 
 ```js
 import {createReducer, createAction} from '@reduxjs/toolkit`;

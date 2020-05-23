@@ -12,8 +12,8 @@
 
 - middleware api type `{ getState: () => State, dispatch: DispatchFunc }`
 
-Redux middleware provides a third-party extension point between dispatching an
-action, and the moment it reaches the reducer:
+Redux middleware provides a third-party extension point **between dispatching an
+action, and the moment it reaches the reducer**:
 
 <p style="text-align: center; margin: 2em">
   <img style="width:100%;max-width:640px;" :src="$withBase('/reduxMiddleware.png')">

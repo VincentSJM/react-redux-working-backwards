@@ -10,29 +10,7 @@ const reducer = (state = initialState, action) {...};
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
 ```
 
-You can use TypeScript type or interface to help you think about state. The
-state can be primitive value, object or array, just like what
-[JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-has.
 
-If you are designing a slice of reducer first and combine reducers into a root
-reducer later, you need to think about how the slice of state map to the root
-state tree:
-
-```ts
-type Todo = {...};
-const todosInitialState: [Todo] = [];
-const todosReducer = (state = todosInitialState, action) => {...};
-
-const rootReducer = combineReducers({todos: todosReducer});
-// rootState will have following mapping:
-// type rootState = { todos: [Todo]}
-```
-
-The other way is to put everything into root state and root reducer first, and
-see how action and state generate the next state. If you see some pieces of
-state are always referenced or updated together, refactor them into a slice of
-state and reducer.
 
 ## Normalizing State
 
@@ -77,26 +55,28 @@ We can normalize it into a hashmap shape:
 ```js
 const state = {
   users: {
-    '001': {
-      id: '001',
-      firstName: ...,
-      lastName: ...,
+    byId: {
+      '001': {
+        id: '001',
+        firstName: ...,
+        lastName: ...,
+      },
+      '002': {
+        id: '002',
+        firstName: ...,
+        lastName: ...,
+      },
+      '003': {
+        id: '003',
+        firstName: ...,
+        lastName: ...,
+      },
+      ...
     },
-    '002': {
-      id: '002',
-      firstName: ...,
-      lastName: ...,
-    },
-    '003': {
-      id: '003',
-      firstName: ...,
-      lastName: ...,
-    },
-    ...
+    // JavaScript object is not an ordered map
+    // we need to add back order info
+    idOrder: ['001', '002', '003', ...],    
   },
-  // JavaScript object is not an ordered map, you will lose order info
-  // we need to add that back
-  userOrder: ['001', '002', '003', ...];
 }
 
 const user001 = state.users['001']; // O(1) access

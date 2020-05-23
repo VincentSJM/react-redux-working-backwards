@@ -1,33 +1,20 @@
 # Actions
 
+- [official doc](https://redux.js.org/glossary#action)
+- type `{ type: string, [key: string]: any }`
+  - Actions must have a `type` field that indicates the type of action being
+    performed
+
 In Redux, Actions are objects, which are payloads of information that send data
 from your application to your store. They are the _only_ source of information
 for the store. You send them to the store using `store.dispatch()`.
 
-- type:
-
-```ts
-export interface Action<T = any> {
-  type: T;
-}
-```
-
 ## Flux Standard Action (FSA)
 
-- type:
-
-```ts
-export interface FluxStandardAction<
-  Type extends string = string,
-  Payload = undefined,
-  Meta = undefined
-> {
-  type: Type;
-  payload?: Payload;
-  error?: boolean;
-  meta?: Meta;
-}
-```
+- [official doc](https://github.com/redux-utilities/flux-standard-action#introduction)
+- type: `{type: string, payload?: any, error?: boolean, meta?: any}`
+- is the recommended standard of action objects in the official
+  [Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-actions-using-the-flux-standard-action-convention)
 
 A basic Flux Standard Action object:
 
@@ -52,7 +39,9 @@ const action = {
 
 ## Action Creators
 
-Action creators are functions that create action objects.
+- [official doc](https://redux.js.org/basics/actions#action-creators)
+- Action creators are functions that create action objects.
+- type `(...arguments) => Action`
 
 ```js
 // action type
@@ -72,16 +61,10 @@ const action = increment(3);
 ## `createAction` from @reduxjs/toolkit
 
 - [official doc](https://redux-toolkit.js.org/api/createAction)
+- A helper function for defining a Redux action type and creator
+- type: `(type: string, prepareAction?: Function) => ActionCreator`
 
-A helper function for defining a Redux action type and creator
-
-- type:
-
-```ts
-function createAction(type: string, prepareAction?: Function): Function;
-```
-
-- example:
+* example:
 
 ```js
 // createAction return an action creator function

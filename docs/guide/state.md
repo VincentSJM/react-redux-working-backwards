@@ -6,6 +6,8 @@ When designing a reducer, you should think about the shape of state first.
 const initialState = ...;
 
 const reducer = (state = initialState, action) {...};
+// `state = initialState` is the way JavaScript assign default to function parameter
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
 ```
 
 You can use TypeScript type or interface to help you think about state. The

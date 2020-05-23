@@ -29,8 +29,8 @@ inside a reducer:
 
 ### Simple `switch` statement reducer
 
-You can use `if` statement if you want, but `switch` statement reducer is more
-common in redux
+You can use `if` statement if you want. `switch` statement reducer is more
+common in redux official docs.
 
 ```js
 function counterReducer(state = 0, action) {
@@ -90,9 +90,13 @@ is actually an Immer draft state and you can mutate it.
 
 ### `createSlice` from @reduxjs/toolkit
 
+- [official doc](https://redux-toolkit.js.org/api/createslice)
+
 ## High-Order Reducer
 
 ### `combineReducers` from redux
+
+- [official doc](https://redux.js.org/api/combinereducers)
 
 ### Beyond `combineReducers`
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>What is State Management? | React Redux Working Backwards</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/react-redux-working-backwards/assets/css/0.styles.601470cd.css" as="style"><link rel="preload" href="/react-redux-working-backwards/assets/js/app.4d00fe77.js" as="script"><link rel="preload" href="/react-redux-working-backwards/assets/js/2.1bf24df1.js" as="script"><link rel="preload" href="/react-redux-working-backwards/assets/js/14.db693821.js" as="script"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/10.13d4bb68.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/11.c344ab09.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/12.4ac718f6.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/13.024e0955.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/3.c3c5c118.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/4.685e2bcc.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/5.c2b3361b.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/6.8552418d.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/7.5f750618.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/8.1994803a.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/9.fbc96a85.js">
+    <link rel="stylesheet" href="/react-redux-working-backwards/assets/css/0.styles.601470cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/react-redux-working-backwards/" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">React Redux Working Backwards</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/react-redux-working-backwards/" class="nav-link router-link-exact-active router-link-active">
+  Home
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/libraries.html" class="nav-link">
+  Libraries
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/react-redux-working-backwards/" class="nav-link router-link-exact-active router-link-active">
+  Home
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/libraries.html" class="nav-link">
+  Libraries
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/react-redux-working-backwards/installation.html" class="sidebar-link">Installation</a></li><li><a href="/react-redux-working-backwards/" class="active sidebar-link">What is State Management?</a></li><li><a href="/react-redux-working-backwards/guide/" class="sidebar-link">Getting Started</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Core Concepts</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/react-redux-working-backwards/guide/store.html" class="sidebar-link">Store</a></li><li><a href="/react-redux-working-backwards/guide/reducer-part-one.html" class="sidebar-link">Reducer: Part I</a></li><li><a href="/react-redux-working-backwards/guide/state.html" class="sidebar-link">State</a></li><li><a href="/react-redux-working-backwards/guide/actions.html" class="sidebar-link">Actions</a></li><li><a href="/react-redux-working-backwards/guide/middleware.html" class="sidebar-link">Middleware</a></li><li><a href="/react-redux-working-backwards/guide/reducer-part-two.html" class="sidebar-link">Reducer: Part II</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="what-is-state-management"><a href="#what-is-state-management" class="header-anchor">#</a> What is State Management?</h1> <p>Let's start with a simple react counter app:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>counter<span class="token punctuation">,</span> setCounter<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setCounter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> val <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>counter<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>It is a self-contained app with the following parts:</p> <ul><li>The state, the source of truth that drives our app;</li> <li>The view, a declarative mapping of the state;</li> <li>The actions, the possible ways the state could change in reaction to user
+inputs from the view.</li></ul> <p>This is a simple representation of the concept of &quot;one-way data flow&quot;:</p> <p style="text-align:center;margin:2em;"><img src="/react-redux-working-backwards/flow.png" style="width:100%;max-width:640px;"></p> <p>However, the simplicity quickly breaks down when we have <strong>multiple components
+that share a common state</strong>:</p> <ul><li>Multiple views may depend on the same piece of state.</li> <li>Actions from different views may need to mutate the same piece of state.</li></ul> <p>For problem one, passing props can be tedious for deeply nested components, and
+simply doesn't work for sibling components. For problem two, we often find
+ourselves resorting to solutions such as reaching for direct parent/child
+instance references or trying to mutate and synchronize multiple copies of the
+state via events. Both of these patterns are brittle and quickly lead to
+unmaintainable code.</p> <p>So why don't we extract the shared state out of the components, and manage it in
+a global singleton? With this, our component tree becomes a big &quot;view&quot;, and any
+component can access the state or trigger actions, no matter where they are in
+the tree!</p> <p>By defining and separating the concepts involved in state management and
+enforcing rules that maintain independence between views and states, we give our
+code more structure and maintainability.</p> <h1 id="when-should-i-use-react-with-redux"><a href="#when-should-i-use-react-with-redux" class="header-anchor">#</a> When should I use React with Redux?</h1> <p>React state management is pretty simple: call setState and let React re-render.
+That's it! Now there's a few steps involved.</p> <ol><li>User types in input box</li> <li>Call action creator to get an action</li> <li>Dispatch action to Redux</li> <li>Redux inserts the action into the root reducer</li> <li>The root reducer delegates that action to the correct reducer</li> <li>The reducer returns a new state given the old state and the action object</li> <li>That new state becomes the store's state</li> <li>React is then called by Redux and told to update</li></ol> <p>So what was one step became several. But each step of this is testable, and
+that's great. And it's explicit and verbose. It's long to follow, but it's an
+easy breadcrumb trailer to follow when things go awry.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react-redux-working-backwards/installation.html" class="prev">
+        Installation
+      </a></span> <span class="next"><a href="/react-redux-working-backwards/guide/">
+        Getting Started
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/react-redux-working-backwards/assets/js/app.4d00fe77.js" defer></script><script src="/react-redux-working-backwards/assets/js/2.1bf24df1.js" defer></script><script src="/react-redux-working-backwards/assets/js/14.db693821.js" defer></script>
+  </body>
+</html>

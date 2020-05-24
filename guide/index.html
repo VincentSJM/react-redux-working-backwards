@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started | React Redux Working Backwards</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/react-redux-working-backwards/assets/css/0.styles.601470cd.css" as="style"><link rel="preload" href="/react-redux-working-backwards/assets/js/app.4d00fe77.js" as="script"><link rel="preload" href="/react-redux-working-backwards/assets/js/2.1bf24df1.js" as="script"><link rel="preload" href="/react-redux-working-backwards/assets/js/7.5f750618.js" as="script"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/10.13d4bb68.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/11.c344ab09.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/12.4ac718f6.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/13.024e0955.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/14.db693821.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/3.c3c5c118.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/4.685e2bcc.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/5.c2b3361b.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/6.8552418d.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/8.1994803a.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/9.fbc96a85.js">
+    <link rel="stylesheet" href="/react-redux-working-backwards/assets/css/0.styles.601470cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/react-redux-working-backwards/" class="home-link router-link-active"><!----> <span class="site-name">React Redux Working Backwards</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/react-redux-working-backwards/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/guide/" class="nav-link router-link-exact-active router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/libraries.html" class="nav-link">
+  Libraries
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/react-redux-working-backwards/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/guide/" class="nav-link router-link-exact-active router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/libraries.html" class="nav-link">
+  Libraries
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/react-redux-working-backwards/installation.html" class="sidebar-link">Installation</a></li><li><a href="/react-redux-working-backwards/" class="sidebar-link">What is State Management?</a></li><li><a href="/react-redux-working-backwards/guide/" class="active sidebar-link">Getting Started</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/react-redux-working-backwards/guide/#the-simplest-store" class="sidebar-link">The Simplest Store</a></li></ul></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Core Concepts</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/react-redux-working-backwards/guide/store.html" class="sidebar-link">Store</a></li><li><a href="/react-redux-working-backwards/guide/reducer-part-one.html" class="sidebar-link">Reducer: Part I</a></li><li><a href="/react-redux-working-backwards/guide/state.html" class="sidebar-link">State</a></li><li><a href="/react-redux-working-backwards/guide/actions.html" class="sidebar-link">Actions</a></li><li><a href="/react-redux-working-backwards/guide/middleware.html" class="sidebar-link">Middleware</a></li><li><a href="/react-redux-working-backwards/guide/reducer-part-two.html" class="sidebar-link">Reducer: Part II</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting Started</h1> <h2 id="the-simplest-store"><a href="#the-simplest-store" class="header-anchor">#</a> The Simplest Store</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">{</span> count<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">counterReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'INCREMENT'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        count<span class="token operator">:</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'DECREMENT'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        count<span class="token operator">:</span> state<span class="token punctuation">.</span>count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>counterReducer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Now, you can access the state as <code>store.getState()</code>, and trigger a state change
+with the <code>store.dispatch</code> method:</p> <div class="language-js extra-class"><pre class="language-js"><code>store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'INCREMENT'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -&gt; { count: 1 };</span>
+</code></pre></div><p>In order to have an access to <code>store</code> in your React components, you need to
+provide the created store to the root react component using <code>react-redux</code>'s
+<a href="https://react-redux.js.org/api/provider" target="_blank" rel="noopener noreferrer"><code>Provider</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> component. <code>react-redux</code>
+internally use
+<a href="https://reactjs.org/docs/context.html#reactcreatecontext" target="_blank" rel="noopener noreferrer"><code>React.createContext API</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+to make the Redux store accessible to deeply nested connected components:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-redux'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span><span class="token punctuation">;</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Now we can access store inside a react component using <code>react-redux</code>'s
+<a href="https://react-redux.js.org/api/hooks#usestore" target="_blank" rel="noopener noreferrer"><code>useStore hook</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-redux'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">CounterComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react-redux-working-backwards/" class="prev router-link-active">
+        What is State Management?
+      </a></span> <span class="next"><a href="/react-redux-working-backwards/guide/store.html">
+        Store
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/react-redux-working-backwards/assets/js/app.4d00fe77.js" defer></script><script src="/react-redux-working-backwards/assets/js/2.1bf24df1.js" defer></script><script src="/react-redux-working-backwards/assets/js/7.5f750618.js" defer></script>
+  </body>
+</html>

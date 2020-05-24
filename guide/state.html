@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>State | React Redux Working Backwards</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/react-redux-working-backwards/assets/css/0.styles.601470cd.css" as="style"><link rel="preload" href="/react-redux-working-backwards/assets/js/app.4d00fe77.js" as="script"><link rel="preload" href="/react-redux-working-backwards/assets/js/2.1bf24df1.js" as="script"><link rel="preload" href="/react-redux-working-backwards/assets/js/10.13d4bb68.js" as="script"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/11.c344ab09.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/12.4ac718f6.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/13.024e0955.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/14.db693821.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/3.c3c5c118.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/4.685e2bcc.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/5.c2b3361b.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/6.8552418d.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/7.5f750618.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/8.1994803a.js"><link rel="prefetch" href="/react-redux-working-backwards/assets/js/9.fbc96a85.js">
+    <link rel="stylesheet" href="/react-redux-working-backwards/assets/css/0.styles.601470cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/react-redux-working-backwards/" class="home-link router-link-active"><!----> <span class="site-name">React Redux Working Backwards</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/react-redux-working-backwards/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/guide/" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/libraries.html" class="nav-link">
+  Libraries
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/react-redux-working-backwards/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/guide/" class="nav-link router-link-active">
+  Guide
+</a></div><div class="nav-item"><a href="/react-redux-working-backwards/libraries.html" class="nav-link">
+  Libraries
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/react-redux-working-backwards/installation.html" class="sidebar-link">Installation</a></li><li><a href="/react-redux-working-backwards/" class="sidebar-link">What is State Management?</a></li><li><a href="/react-redux-working-backwards/guide/" class="sidebar-link">Getting Started</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Core Concepts</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/react-redux-working-backwards/guide/store.html" class="sidebar-link">Store</a></li><li><a href="/react-redux-working-backwards/guide/reducer-part-one.html" class="sidebar-link">Reducer: Part I</a></li><li><a href="/react-redux-working-backwards/guide/state.html" class="active sidebar-link">State</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/react-redux-working-backwards/guide/state.html#getting-redux-state-into-react-components" class="sidebar-link">Getting Redux State into React Components</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/react-redux-working-backwards/guide/state.html#connect-and-mapstatetoprops-from-react-redux" class="sidebar-link">connect and mapStateToProps from react-redux</a></li><li class="sidebar-sub-header"><a href="/react-redux-working-backwards/guide/state.html#useselector-hook-from-react-redux" class="sidebar-link">useSelector hook from react-redux</a></li><li class="sidebar-sub-header"><a href="/react-redux-working-backwards/guide/state.html#reselect-library" class="sidebar-link">Reselect library</a></li></ul></li><li class="sidebar-sub-header"><a href="/react-redux-working-backwards/guide/state.html#normalizing-state" class="sidebar-link">Normalizing State</a></li></ul></li><li><a href="/react-redux-working-backwards/guide/actions.html" class="sidebar-link">Actions</a></li><li><a href="/react-redux-working-backwards/guide/middleware.html" class="sidebar-link">Middleware</a></li><li><a href="/react-redux-working-backwards/guide/reducer-part-two.html" class="sidebar-link">Reducer: Part II</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="state"><a href="#state" class="header-anchor">#</a> State</h1> <p>When designing a reducer, you should think about the shape of state first.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// store/state.js</span>
+<span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">{</span> count<span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> state<span class="token punctuation">;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// store/reducer.js</span>
+<span class="token keyword">import</span> initialState <span class="token keyword">from</span> <span class="token string">'./state'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// `state = initialState` is the way JavaScript assign default to function parameter</span>
+<span class="token comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters</span>
+</code></pre></div><p>The <code>initialState</code> can be primitive value such as <code>number</code>, <code>string</code> or
+<code>boolean</code>.</p> <p>However, the global state of your Redux application is often a deeply nested
+<code>object</code>, and we call it a <code>state tree</code> or an <code>object tree</code>.</p> <p>One Redux store has
+<a href="https://redux.js.org/introduction/three-principles#single-source-of-truth" target="_blank" rel="noopener noreferrer">a single state tree<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.
+The single state tree does not conflict with modularity - in the chapter
+<a href="/react-redux-working-backwards/guide/reducer-part-two.html">Reducer: Part II</a> we will discuss how to split your
+state and reducer into slices.</p> <h2 id="getting-redux-state-into-react-components"><a href="#getting-redux-state-into-react-components" class="header-anchor">#</a> Getting Redux State into React Components</h2> <h3 id="connect-and-mapstatetoprops-from-react-redux"><a href="#connect-and-mapstatetoprops-from-react-redux" class="header-anchor">#</a> <code>connect</code> and <code>mapStateToProps</code> from react-redux</h3> <ul><li><a href="https://react-redux.js.org/using-react-redux/connect-mapstate#defining-mapstatetoprops" target="_blank" rel="noopener noreferrer">official doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://react-redux.js.org/api/connect" target="_blank" rel="noopener noreferrer">official api doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h3 id="useselector-hook-from-react-redux"><a href="#useselector-hook-from-react-redux" class="header-anchor">#</a> <code>useSelector</code> hook from react-redux</h3> <ul><li><a href="https://react-redux.js.org/api/hooks#useselector" target="_blank" rel="noopener noreferrer">official doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h3 id="reselect-library"><a href="#reselect-library" class="header-anchor">#</a> Reselect library</h3> <ul><li><a href="https://github.com/reduxjs/reselect/blob/master/README.md" target="_blank" rel="noopener noreferrer">official doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="normalizing-state"><a href="#normalizing-state" class="header-anchor">#</a> Normalizing State</h2> <ul><li><a href="https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape" target="_blank" rel="noopener noreferrer">official doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>It is often the case that a REST API returns data in the form of
+<code>an array of objects</code>. If you put the data directly into the state, the state
+might look like following. The time complexity for you to find a user by id in
+this array is <code>O(N)</code>.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> state <span class="token operator">=</span><span class="token punctuation">{</span>
+  <span class="token comment">// GET /api/users</span>
+  users<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">'001'</span><span class="token punctuation">,</span>
+      firstName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+      lastName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">'002'</span><span class="token punctuation">,</span>
+      firstName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+      lastName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">'003'</span><span class="token punctuation">,</span>
+      firstName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+      lastName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>We can normalize the data into a hashmap shape in order to have <code>O(1)</code> access:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">{</span>
+  users<span class="token operator">:</span> <span class="token punctuation">{</span>
+    byId<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'001'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">'001'</span><span class="token punctuation">,</span>
+        firstName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+        lastName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">'002'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">'002'</span><span class="token punctuation">,</span>
+        firstName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+        lastName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">'003'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> <span class="token string">'003'</span><span class="token punctuation">,</span>
+        firstName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+        lastName<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token operator">...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// JavaScript object is not an ordered map</span>
+    <span class="token comment">// we need to add back order info</span>
+    idOrder<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'001'</span><span class="token punctuation">,</span> <span class="token string">'002'</span><span class="token punctuation">,</span> <span class="token string">'003'</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> user001 <span class="token operator">=</span> state<span class="token punctuation">.</span>users<span class="token punctuation">[</span><span class="token string">'001'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// O(1) access</span>
+</code></pre></div><p>You can use <a href="https://github.com/paularmstrong/normalizr" target="_blank" rel="noopener noreferrer">normalizr<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> library to
+help normalize and denormalize data.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react-redux-working-backwards/guide/reducer-part-one.html" class="prev">
+        Reducer: Part I
+      </a></span> <span class="next"><a href="/react-redux-working-backwards/guide/actions.html">
+        Actions
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/react-redux-working-backwards/assets/js/app.4d00fe77.js" defer></script><script src="/react-redux-working-backwards/assets/js/2.1bf24df1.js" defer></script><script src="/react-redux-working-backwards/assets/js/10.13d4bb68.js" defer></script>
+  </body>
+</html>

@@ -73,5 +73,7 @@ You should **never** mutate the state object inside the plain reducer such as
 the `switch` statement reducer.
 
 However, @reduxjs/toolkit's `createReducer` is using
-[Immer](https://immerjs.github.io/immer/docs/introduction) and the `state` param
-is actually an Immer draft state and you can mutate it.
+[Immer library](https://immerjs.github.io/immer/docs/introduction) internally,
+which lets you write code that "mutates" some data, but actually applies the
+updates immutably. This makes it effectively impossible to accidentally mutate
+state in a reducer.

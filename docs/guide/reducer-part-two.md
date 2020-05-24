@@ -8,10 +8,9 @@
 - **_slice reducer_**: a reducer that is being used to handle updates to one
   specific slice of the state tree, usually done by passing it to
   `combineReducers`
-- **_case function_**: case function: a function that is being used to handle
-  the update logic for a specific action. This may actually be a reducer
-  function (**_case reducer_**), or it may require other parameters to do its
-  work properly.
+- **_case function_**: a function that is being used to handle the update logic
+  for a specific action. This may actually be a reducer function (**_case
+  reducer_**), or it may require other parameters to do its work properly.
 - **_higher-order reducer_**: a function that takes a reducer function as an
   argument, and/or returns a new reducer function as a result (such as
   `combineReducers`)

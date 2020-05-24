@@ -12,6 +12,16 @@
 store.dispatch({ type: 'INCREMENT' });
 ```
 
+## Dispatch Action From React Components
+
+### `connect` and `mapDispatchToProps` from react-redux
+
+- [official doc](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object)
+
+### `useDispatch` hook from react-redux
+
+- [official doc](https://react-redux.js.org/api/hooks#usedispatch)
+
 ## Flux Standard Action (FSA)
 
 - [official doc](https://github.com/redux-utilities/flux-standard-action#introduction)
@@ -84,7 +94,3 @@ console.log(increment.toString());
 console.log(`The action type is: ${increment}`);
 // 'The action type is: counter/increment'
 ```
-
-## Dispatch Action From React Components
-
-### `connect` and `mapDispatchToProps` from react-redux

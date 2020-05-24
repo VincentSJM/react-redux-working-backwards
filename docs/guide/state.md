@@ -34,7 +34,8 @@ state and reducer into slices.
 
 ### `connect` and `mapStateToProps` from react-redux
 
-- [official doc](https://react-redux.js.org/api/connect)
+- [official doc](https://react-redux.js.org/using-react-redux/connect-mapstate#defining-mapstatetoprops)
+- [official api doc](https://react-redux.js.org/api/connect)
 
 ### `useSelector` hook from react-redux
 

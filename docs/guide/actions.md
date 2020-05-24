@@ -16,7 +16,8 @@ store.dispatch({ type: 'INCREMENT' });
 
 ### `connect` and `mapDispatchToProps` from react-redux
 
-- [official doc](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object)
+- [official doc](https://react-redux.js.org/using-react-redux/connect-mapdispatch#defining-mapdispatchtoprops-as-a-function)
+- [official api doc](https://react-redux.js.org/api/connect#mapdispatchtoprops-object-dispatch-ownprops-object)
 
 ### `useDispatch` hook from react-redux
 

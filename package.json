@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/VincentSJM/react-redux-working-backwards.git",
-  "author": "VincentSJM <sjm.zax@gmail.com>",
+  "author": "Qi <sjm.zax@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.5.0",
